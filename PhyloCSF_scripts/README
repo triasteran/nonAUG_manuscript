@@ -1,1 +1,20 @@
 This directory contains scripts and files that were used to calcualte PhyloCSF score for genomic regions. 
+
+This pipeline outputs .fasta files of 120-mammals alignments for an extension per transcript in fasta3/ directory for subsequent PhyloCSF score calculation. 
+It uses following scripts: 
+
+* bed_files_creation_and_maf_download_and_extraction.py:
+    0. create all necessary directories for temporary files 
+    1. download original .maf files with 120-mammals alignment, unzip it, create index file (.bb)
+    2. create bed files with genomic coordinates of extensions
+    3. extract blocks of aligments using original .maf files and .bed files using mafExtract utility 
+    4. remove all large downloaded and created input files (.bb, .maf, .maf.gz)
+    of note: it parallelizes operations using list of chromosomes. 
+
+* alignment_preparation.py 
+    1. merge .maf files into 1 maf
+    2. stitch blocks into 1 .fasta file taking into acount strandness 
+    3. remove gaps and format fasta -> final alignment file 
+    
+ * PhyloCSF_score_calculation.sh - PhyloCSF score calculation. 
+ It uses GNU parallel over chromosomes and transcripts. 
