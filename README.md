@@ -2,7 +2,7 @@
 Scripts that perform analysis for detection of non-AUG proteoforms.
 
 ## How to install and run 
-All scripts can be run on Ubuntu 18.04 with Python 3.6 and R installed. 
+All scripts can be run on Ubuntu 18.04 with Python 3.6 and R installed. You may need some additional packages depending on a script, e.g. Biopython. 
 
 ## Data 
 Gencode 25 and 38 annotation files (gtf, fasta) can be downaloded from https://www.gencodegenes.org/; 
