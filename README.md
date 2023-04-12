@@ -1,4 +1,6 @@
 # nonAUG_manuscript
+Published in Nature Communications, https://www.nature.com/articles/s41467-022-35595-6, December 2022. 
+
 Scripts that perform analysis for detection of non-AUG proteoforms.
 
 ## How to install and run 
